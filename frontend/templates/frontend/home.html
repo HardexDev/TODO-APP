@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/style.css' %}">
+    <title>TO-DO LIST</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center page-container" id="page-container">
+        <div class="main-container">
+            <div class="header-container d-flex align-items-center justify-content-between">
+                <div class="date d-flex">
+                    <h3 class="day-num" id="day-num"></h3>
+                    <div class="month-year d-flex flex-column">
+                        <p class="month" id="month"></p>
+                        <p class="year" id="year"></p>
+                    </div>
+                </div>
+                <div class="day">
+                    <h3 class="day-name" id="day-name"></h3>
+                </div> 
+            </div>
+            <div class="body-container" id="body-container">
+                
+            </div>
+            <div class="add-container d-flex justify-content-center">
+                <i class="fas fa-plus-circle add-button" id="add-button"></i>
+            </div>
+        </div>
+    </div>
+    <div class="modal-form" id="modal-form">
+            <div class="modal-container">
+                <h4 class="text-add-task mb-4">Nouvelle tâche</h4>
+                <form method="POST" class="text-center" id="add-form">
+                    {% csrf_token %}
+                    <div class="form-group mb-4">
+                        <input type="text" class="form-control" id="task-name" placeholder="Nom de la tâche" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                        <button type="button" class="btn btn-info" id="back-button">Retour</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    <script src="{% static 'frontend/js/app.js' %}"></script>
+</body>
+</html>

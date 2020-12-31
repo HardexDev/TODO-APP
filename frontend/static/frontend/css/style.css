@@ -1,0 +1,121 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-container{
+    height: 100vh;
+    background-color: #55efc4;
+    transition: 0.3s;
+}
+
+.page-container.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.main-container{
+    height: 65vh;
+    width : 25rem;
+    background-color: #FFF;
+}
+
+.header-container{
+    height: 12vh;
+    padding : 30px;
+}
+
+.day-num{
+    font-weight: bold;
+    font-size : 40px;
+}
+
+.month-year{
+    position : relative;
+    top : 5px;
+}
+
+.month-year p{
+    margin-bottom : 0;
+    margin-left : 5px;
+    font-size : 12px;
+}
+
+.month{
+    font-weight : bold;
+}
+
+.day-name{
+    font-size : 20px;
+    text-transform: capitalize;
+}
+
+.body-container{
+    height: 45vh;
+    padding : 0px 40px 40px 40px;
+    overflow-y: scroll;
+}
+
+.task{
+    height : 6vh;
+}
+
+.task-name{
+    font-family: "montserrat";
+}
+
+.check-circle{
+    color : #ccae62;
+    font-size : 20px;
+    cursor: pointer;
+}
+
+.add-container{
+    position: relative;
+    top : 40px;
+}
+
+.add-button{
+    font-size : 70px;
+    color : #81ECEC;
+    background-color: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index : 20;
+}
+
+.modal-form{
+    position : absolute;
+    top : 60%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    height: 20vh;
+    width : 25rem;
+    background-color: #FFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.modal-form.active{
+    top : 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.modal-container{
+    padding : 15px;
+    height: 100%;
+}
+
+.text-task-form{
+    margin-bottom : 50px;
+}
+
+.delete-icon{
+    margin-left : 10px;
+    font-size : 20px;
+    cursor: pointer;
+    color : #ED4C67
+}
